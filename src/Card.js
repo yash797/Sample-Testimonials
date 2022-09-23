@@ -54,28 +54,99 @@ const info =[
         testimonials:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
     }
 ]
+// const Swiper = new Swiper('.swiper', {
+//   // Default parameters
+//   slidesPerView: 1,
+//   spaceBetween: 10,
+//   // Responsive breakpoints
+//   breakpoints: {
+    // when window width is >= 320px
+    // 320: {
+    //   slidesPerView: 2,
+    //   spaceBetween: 20
+    // },
+    // // when window width is >= 480px
+    // 480: {
+    //   slidesPerView: 3,
+    //   spaceBetween: 30
+    // },
+    // // when window width is >= 640px
+    // 640: {
+    //   slidesPerView: 4,
+    //   spaceBetween: 40
+    // }
+//   }
+// })
+// var Swiper = new Swiper(".swiper", {
+//   // Default parameters
+//   slidesPerView: 3,
+//   spaceBetween: 50,
+//   // Responsive breakpoints
+//   breakpoints: {
+//     // when window width is <= 499px
+//     499: {
+//       slidesPerView: 1,
+//       spaceBetweenSlides: 50,
+//     },
+//     // when window width is <= 999px
+//     999: {
+//       slidesPerView: 3,
+//       spaceBetweenSlides: 50,
+//     },
+//   },
+// });
 
   return (
     <div>
-      <h1 className="text-center text-gray-700 font-semibold text-4xl mt-16">
+      <h1 className="text-center text-gray-200 font-semibold text-4xl mt-16">
         Sample Testimonials
       </h1>
+
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={"3"}
-        loop={true}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
+        spaceBetween={10}
+        slidesPerView={"1"}
+        breakpoints={{
+          220: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          // when window width is >= 480px
+          480: {
+            slidesPerView: 1,
+            spaceBetween: 30,
+          },
+          // when window width is >= 640px
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          840: {
+            slidesPerView: 2,
+            spaceBetween: -10,
+          },
+          1020: {
+            slidesPerView: 2,
+            spaceBetween: -40,
+          },
+          1220: {
+            slidesPerView: 3,
+            spaceBetween: -40,
+          },
         }}
+        centeredSlides={true}
+        loop={true}
+        // coverflowEffect={{
+        //   rotate: 50,
+        //   stretch: 0,
+        //   depth: 100,
+        //   modifier: 1,
+        //   slideShadows: true,
+        // }}
         pagination={true}
         navigation={true}
-        modules={[EffectCoverflow, Pagination, Navigation]}
+        modules={[Pagination, Navigation]}
         className="mySwiper"
       >
         {info.map((member, i) => (
